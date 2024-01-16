@@ -1,6 +1,7 @@
 // Importar JWT y el Modelo
 import jwt from 'jsonwebtoken'
 import Veterinario from '../models/Veterinario.js'
+import Paciente from '../models/Paciente.js'
 
 // Método para proteger rutas
 const verificarAutenticacion = async (req,res,next)=>{
@@ -17,6 +18,10 @@ const verificarAutenticacion = async (req,res,next)=>{
                 // Obtener el usuario
                 req.veterinarioBDD = await Veterinario.findById(id).lean().select("-password")
                 // Continuar el proceso
+                next()
+            }
+            else {
+                req.pacienteBDD = await Paciente.findById(id).lean().select("-password")
                 next()
             }
         } catch (error) {
