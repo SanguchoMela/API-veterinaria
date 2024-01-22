@@ -33,3 +33,13 @@ Start the server
 To run this project, you will need to add the following environment variables to your `.env` file
 #### Database
 - `MONGODB_URI`
+
+#### Nodemailer
+- `URL_BACKEND`
+- `HOST_MAILTRAP`
+- `PORT_MAILTRAP`
+- `USER_MAILTRAP`
+- `PASS_MAILTRAP`
+
+#### JWT
+- `JWT_SECRET`
