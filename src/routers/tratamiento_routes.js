@@ -10,6 +10,7 @@ import {
 } from "../controllers/tratamiento_controller.js"
 
 import verificarAutenticacion from "../middlewares/autenticacion.js"
+import { validacionTratamiento } from '../middlewares/validacionTratamiento.js'
 
 // router.post('/tratamiento/registro',verificarAutenticacion,registrarTratamiento)
 // router
@@ -21,7 +22,7 @@ import verificarAutenticacion from "../middlewares/autenticacion.js"
 // router.put('/tratamiento/estado/:id',verificarAutenticacion,cambiarEstado)
 
 // Ruta para crear el tratamiento
-router.post('/tratamiento/registro',verificarAutenticacion,registrarTratamiento)
+router.post('/tratamiento/registro',verificarAutenticacion,validacionTratamiento,registrarTratamiento)
 
 // Ruta para ver el detalle del tratamiento
 router.get('/tratamiento/:id',verificarAutenticacion,detalleTratamiento)
